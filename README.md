@@ -8,7 +8,7 @@ I tried to use UnityGLTF , but is too difficult to use. so I do some modify, jus
 
 ## Current Synced CommitID with UnityGLTF
 
-CommitID: 1e003333698be2d6026211c2ee85ddbd25d07b72
+CommitID: 1e003333698be2d6026211c2ee85ddbd25d07b72 (31 Jan 2020)
 
 
 ## 简介
@@ -18,5 +18,5 @@ UnityGLTF 的仓库使用起来太麻烦了, 我对这个仓库做了调整, 让
 
 ## 当前同步 UnityGLTF 的节点
 
-当前同步的是 UnityGLTF 的 CommitID: 1e003333698be2d6026211c2ee85ddbd25d07b72
+当前同步的是 UnityGLTF 的 CommitID: 1e003333698be2d6026211c2ee85ddbd25d07b72  (2020/01/31)
 
