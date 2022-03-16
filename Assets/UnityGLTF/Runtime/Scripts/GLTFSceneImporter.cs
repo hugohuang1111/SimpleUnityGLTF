@@ -211,6 +211,20 @@ namespace UnityGLTF
 		protected ImportProgress progressStatus = default(ImportProgress);
 		protected IProgress<ImportProgress> progress = null;
 
+		public GLTFRoot GltfRoot {
+			get {
+				return _gltfRoot;
+			}
+		}
+
+		public AssetCache AssetCache {
+			get {
+				return _assetCache;
+			}
+		}
+
+
+
 		public GLTFSceneImporter(string gltfFileName, ImportOptions options)
 		{
 			_gltfFileName = gltfFileName;
@@ -667,7 +681,7 @@ namespace UnityGLTF
 			progress?.Report(progressStatus);
 		}
 
-		private async Task<BufferCacheData> GetBufferData(BufferId bufferId)
+		public async Task<BufferCacheData> GetBufferData(BufferId bufferId)
 		{
 			if (_assetCache.BufferCache[bufferId.Id] == null)
 			{
@@ -677,7 +691,7 @@ namespace UnityGLTF
 			return _assetCache.BufferCache[bufferId.Id];
 		}
 
-		protected async Task ConstructBuffer(GLTFBuffer buffer, int bufferIndex)
+		public async Task ConstructBuffer(GLTFBuffer buffer, int bufferIndex)
 		{
 			if (buffer.Uri == null)
 			{

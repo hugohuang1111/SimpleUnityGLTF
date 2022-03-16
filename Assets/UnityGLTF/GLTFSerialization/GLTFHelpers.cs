@@ -953,6 +953,14 @@ namespace GLTF
 
 				return false;
 			}
+
+			public static unsafe float GetFloatElement(byte[] buffer, uint byteOffset)
+			{
+				fixed (byte* offsetBuffer = &buffer[byteOffset])
+				{
+					return *((float*)offsetBuffer);
+				}
+			}
 		}
 	}
 }

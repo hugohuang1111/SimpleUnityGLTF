@@ -64,7 +64,7 @@ namespace UnityGLTF
 			}
 		}
 
-		public async Task Load()
+		public async Task Load(Action<GLTFSceneImporter> parserFinishAction = null)
 		{
 			var importOptions = new ImportOptions
 			{
@@ -141,6 +141,9 @@ namespace UnityGLTF
 
 				print("model loaded with vertices: " + sceneImporter.Statistics.VertexCount.ToString() + ", triangles: " + sceneImporter.Statistics.TriangleCount.ToString());
 				LastLoadedScene = sceneImporter.LastLoadedScene;
+				if (null != parserFinishAction) {
+					parserFinishAction(sceneImporter);
+				}
 
 				Animations = sceneImporter.LastLoadedScene.GetComponents<Animation>();
 
